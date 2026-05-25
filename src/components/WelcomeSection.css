@@ -1,0 +1,115 @@
+.welcome-section {
+  padding: 100px 0;
+  background-color: var(--bg-deep);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 100px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  padding: 2.5rem 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 69, 0, 0.3);
+  box-shadow: var(--primary-glow);
+}
+
+.stat-icon-wrapper {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.stat-icon-wrapper svg {
+  width: 40px;
+  height: 40px;
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-card p {
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.welcome-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.image-stack {
+  position: relative;
+}
+
+.main-img {
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.accent-box {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  background: var(--primary-gradient);
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.section-subtitle {
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.welcome-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.welcome-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 991px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .welcome-container { grid-template-columns: 1fr; gap: 3rem; }
+  .welcome-content { text-align: center; }
+}
+
+@media (max-width: 576px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}

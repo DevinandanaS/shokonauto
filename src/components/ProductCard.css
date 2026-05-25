@@ -1,0 +1,115 @@
+.product-card {
+  background: var(--bg-lighter);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border-color: rgba(255, 69, 0, 0.2);
+}
+
+.product-img-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img-wrapper img {
+  transform: scale(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 69, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: var(--transition-fast);
+}
+
+.product-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.btn-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: scale(0.5);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.product-card:hover .btn-icon {
+  transform: scale(1);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: white;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.price-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+.learn-more {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.learn-more:hover {
+  color: var(--primary-color);
+}

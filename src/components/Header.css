@@ -1,0 +1,92 @@
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: var(--transition-smooth);
+}
+
+.main-header.scrolled {
+  padding: 0.8rem 0;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 69, 0, 0.2);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.header-car-icon {
+  color: var(--primary-color);
+  filter: drop-shadow(0 0 8px rgba(255, 69, 0, 0.5));
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.header-contact {
+  display: flex;
+  gap: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--primary-color);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-details span {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.contact-details a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+@media (max-width: 991px) {
+  .nav-links, .hide-mobile {
+    display: none;
+  }
+}
