@@ -3,6 +3,14 @@ import './Hero.css';
 import TextPressure from './TextPressure';
 
 const Hero = memo(() => {
+  const handleVideoError = (e) => {
+    console.error('Video error:', e.target.error);
+  };
+
+  const handleVideoLoad = () => {
+    console.log('Video loaded successfully');
+  };
+
   return (
     <section id="home" className="hero">
       <div className="hero-background">
@@ -42,16 +50,23 @@ const Hero = memo(() => {
         </div>
 
         <div className="hero-visual">
-          <div className="car-placeholder">
-            <div className="placeholder-content">
-              <div className="car-icon">🚗</div>
-              <h3>Premium Showcase</h3>
-              <p>3D Visualization Space</p>
-            </div>
+          <div className="car-video-container">
+            <video 
+              className="car-video"
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              onError={handleVideoError}
+              onLoadedData={handleVideoLoad}
+            >
+              <source src="/carv.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
           <div className="visual-caption">
             <span className="pulse-dot"></span>
-            Interactive 3D Model Space
+            Premium Showcase
           </div>
         </div>
       </div>
