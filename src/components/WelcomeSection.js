@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import './WelcomeSection.css';
 import { Award, Users, Globe, Briefcase } from 'lucide-react';
-import ScrollFloat from './ScrollFloat';
 
 const WelcomeSection = memo(() => {
   const stats = [
@@ -36,13 +35,9 @@ const WelcomeSection = memo(() => {
           <div className="welcome-right">
             <div className="welcome-content">
               <span className="section-subtitle">THE SAMURAI SPIRIT</span>
-              <ScrollFloat 
-                containerClassName="welcome-title"
-                scrollStart="top bottom-=20%"
-                scrollEnd="center center"
-              >
-                Excellence Forged in Tradition
-              </ScrollFloat>
+              <h2 className="welcome-main-title">
+                Excellence Forged in <span className="gradient-text">Tradition</span>
+              </h2>
               <p>
                 The name <strong>Shokon</strong> signifies the Spirit of a Samurai. Our business excels through the same spirit that propelled the Japanese auto industry to global dominance.
               </p>

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import './Hero.css';
-import { ChevronRight, Shield, Zap, Sparkles } from 'lucide-react';
+import TextPressure from './TextPressure';
 
 const Hero = memo(() => {
   return (
@@ -12,13 +12,22 @@ const Hero = memo(() => {
       
       <div className="container hero-container">
         <div className="hero-content">
-          <div className="badge">
-            <Sparkles size={14} />
-            <span>Premium Auto Solutions</span>
-          </div>
-          <h1>
+          <h1 className="hero-title">
             Reimagine Your <br />
-            <span className="gradient-text">Driving Experience</span>
+            <span className="text-pressure-wrapper">
+              <TextPressure
+                text="DRIVING EXPERIENCE"
+                textColor="#ff4500"
+                minFontSize={40}
+                width={true}
+                weight={true}
+                italic={false}
+                alpha={false}
+                flex={false}
+                stroke={false}
+                scale={false}
+              />
+            </span>
           </h1>
           <p>
             Shokon Auto is the automotive aftermarket design, manufacture and distribution company based in Dubai, United Arab Emirates. We bring next-gen innovation to your vehicle.
@@ -26,20 +35,9 @@ const Hero = memo(() => {
           
           <div className="hero-btns">
             <button className="btn btn-primary">
-              Explore Products <ChevronRight size={18} />
+              Explore Products
             </button>
             <button className="btn btn-outline">Our Services</button>
-          </div>
-
-          <div className="hero-stats">
-            <div className="hero-stat-item">
-              <Shield className="stat-icon" />
-              <span>Certified Quality</span>
-            </div>
-            <div className="hero-stat-item">
-              <Zap className="stat-icon" />
-              <span>Fast Response</span>
-            </div>
           </div>
         </div>
 
@@ -48,7 +46,7 @@ const Hero = memo(() => {
             <div className="placeholder-content">
               <div className="car-icon">🚗</div>
               <h3>Premium Showcase</h3>
-              <p>3D Visualization Coming Soon</p>
+              <p>3D Visualization Space</p>
             </div>
           </div>
           <div className="visual-caption">

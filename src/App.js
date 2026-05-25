@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import WelcomeSection from './components/WelcomeSection';
 import ExteriorSection from './components/ExteriorSection';
-import ProductSection from './components/ProductSection';
+import InteriorSection from './components/InteriorSection';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import './App.css';
@@ -94,12 +94,7 @@ function App() {
         <ExteriorSection products={exteriorProducts} />
       </div>
       <div className="section-animate">
-        <ProductSection 
-          subtitle="LUXURY COMFORT" 
-          title="INTERIOR INNOVATIONS" 
-          bgColor="var(--bg-card)" 
-          products={interiorProducts}
-        />
+        <InteriorSection products={interiorProducts} />
       </div>
       <div className="section-animate">
         <ContactForm />

@@ -1,59 +1,85 @@
+/* Contact Form Section */
 .contact-form-section {
   padding: 100px 0;
   background-color: var(--bg-deep);
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: 4rem;
-  align-items: flex-start;
+.contact-header-section {
+  text-align: center;
+  margin-bottom: 80px;
 }
 
+.contact-header-section .section-subtitle {
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.contact-header-section .section-title {
+  font-size: 3rem;
+  color: var(--text-primary);
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  margin-bottom: 80px;
+}
+
+/* Info Cards */
 .contact-info-cards {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .info-card {
   background: var(--bg-card);
   padding: 2rem;
-  border-radius: 15px;
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: var(--transition-smooth);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .info-card:hover {
-  border-color: var(--primary-color);
-  transform: translateX(10px);
+  transform: translateY(-5px);
+  border-color: rgba(255, 69, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(255, 69, 0, 0.2);
 }
 
 .info-icon {
+  width: 40px;
+  height: 40px;
   color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
 .info-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
-  color: white;
+  font-weight: 700;
 }
 
 .info-card p {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
+/* Form */
 .form-wrapper {
   background: var(--bg-card);
   padding: 3rem;
-  border-radius: 25px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.form-wrapper .section-title {
-  margin-bottom: 2rem;
 }
 
 .query-form {
@@ -68,43 +94,137 @@
   gap: 1.5rem;
 }
 
-.input-group input, 
-.input-group select, 
-.input-group textarea {
-  width: 100%;
-  background: var(--bg-deep);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 10px;
-  color: white;
-  font-family: var(--font-body);
-  transition: var(--transition-fast);
+.input-group {
+  display: flex;
+  flex-direction: column;
 }
 
-.input-group input:focus, 
-.input-group select:focus, 
-.input-group textarea:focus {
+.input-group input,
+.input-group select,
+.input-group textarea {
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
   outline: none;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 10px rgba(255, 69, 0, 0.2);
+  background: rgba(255, 69, 0, 0.05);
+  box-shadow: 0 0 0 3px rgba(255, 69, 0, 0.1);
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.input-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666680' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 20px;
+  padding-right: 3rem;
+}
+
+.input-group textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
 .submit-btn {
-  width: fit-content;
   margin-top: 1rem;
+  width: 100%;
+  padding: 1.2rem 2rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
 }
 
+/* Magic Bento Section */
+.magic-bento-section {
+  margin-top: 80px;
+}
+
+.bento-section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+/* Responsive */
 @media (max-width: 991px) {
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contact-info-cards {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .info-card {
+    flex: 1;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+  .contact-form-section {
+    padding: 60px 0;
+  }
+
+  .contact-header-section .section-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-info-cards {
+    flex-direction: column;
+  }
+
+  .form-wrapper {
+    padding: 2rem;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
+
+  .magic-bento-section {
+    margin-top: 60px;
+  }
+
+  .bento-section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header-section .section-title {
+    font-size: 2rem;
+  }
+
   .form-wrapper {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .bento-section-title {
+    font-size: 1.8rem;
   }
 }

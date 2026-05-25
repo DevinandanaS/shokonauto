@@ -6,7 +6,7 @@
 
 .exterior-section .section-head {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
 }
 
 .exterior-section .section-subtitle {
@@ -14,7 +14,7 @@
   font-weight: 700;
   letter-spacing: 3px;
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 0.9rem;
 }
 
@@ -127,18 +127,9 @@
   position: relative;
 }
 
-.exterior-card .learn-more::after {
-  content: '→';
-  margin-left: 0.5rem;
-  transition: margin-left 0.3s ease;
-}
-
 .exterior-card .learn-more:hover {
   color: var(--accent-orange);
-}
-
-.exterior-card .learn-more:hover::after {
-  margin-left: 1rem;
+  transform: translateX(5px);
 }
 
 /* Responsive */

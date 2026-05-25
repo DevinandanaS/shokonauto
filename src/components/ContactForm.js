@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './ContactForm.css';
 import { Send, MapPin, Phone, Mail } from 'lucide-react';
+import MagicBento from './MagicBento';
 
-const ContactForm = () => {
+const ContactForm = memo(() => {
   return (
     <section id="contact" className="contact-form-section">
       <div className="container">
+        <div className="contact-header-section">
+          <span className="section-subtitle">GET IN TOUCH</span>
+          <h2 className="section-title">
+            Schedule an <span className="gradient-text">Appointment</span>
+          </h2>
+        </div>
+
         <div className="contact-grid">
           <div className="contact-info-cards">
             <div className="info-card">
@@ -26,8 +34,6 @@ const ContactForm = () => {
           </div>
 
           <div className="form-wrapper">
-            <span className="section-subtitle">GET IN TOUCH</span>
-            <h2 className="section-title">Schedule an <span className="gradient-text">Appointment</span></h2>
             <form className="query-form">
               <div className="form-row">
                 <div className="input-group">
@@ -59,9 +65,28 @@ const ContactForm = () => {
             </form>
           </div>
         </div>
+
+        {/* Magic Bento Grid */}
+        <div className="magic-bento-section">
+          <h3 className="bento-section-title">Why Choose Us</h3>
+          <MagicBento
+            textAutoHide={false}
+            enableStars={true}
+            enableSpotlight={true}
+            enableBorderGlow={true}
+            enableTilt={true}
+            enableMagnetism={true}
+            clickEffect={true}
+            glowColor="255, 69, 0"
+            spotlightRadius={300}
+            particleCount={12}
+          />
+        </div>
       </div>
     </section>
   );
-};
+});
+
+ContactForm.displayName = 'ContactForm';
 
 export default ContactForm;

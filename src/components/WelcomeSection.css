@@ -3,11 +3,20 @@
   background-color: var(--bg-deep);
 }
 
+.welcome-section .section-subtitle {
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
 }
 
 .stat-card {
@@ -89,23 +98,23 @@
   font-weight: 700;
   letter-spacing: 3px;
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .welcome-content h2 {
   font-size: 3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   line-height: 1.2;
 }
 
-.welcome-content .welcome-title {
+.welcome-content .welcome-main-title {
   font-size: 3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   line-height: 1.2;
   color: var(--text-primary);
 }
 
-.welcome-content .welcome-title .char {
+.welcome-content .welcome-main-title .gradient-text {
   background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
