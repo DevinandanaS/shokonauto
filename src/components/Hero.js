@@ -1,16 +1,9 @@
 import React, { memo } from 'react';
 import './Hero.css';
 import TextPressure from './TextPressure';
+import PixelTransition from './PixelTransition';
 
 const Hero = memo(() => {
-  const handleVideoError = (e) => {
-    console.error('Video error:', e.target.error);
-  };
-
-  const handleVideoLoad = () => {
-    console.log('Video loaded successfully');
-  };
-
   return (
     <section id="home" className="hero">
       <div className="hero-background">
@@ -21,10 +14,10 @@ const Hero = memo(() => {
       <div className="container hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
-            Reimagine Your <br />
+            Re-imagine Your <br />
             <span className="text-pressure-wrapper">
               <TextPressure
-                text="DRIVING EXPERIENCE"
+                text="DRIVING EXPERIENCE!!"
                 textColor="#ff4500"
                 minFontSize={40}
                 width={true}
@@ -50,24 +43,32 @@ const Hero = memo(() => {
         </div>
 
         <div className="hero-visual">
-          <div className="car-video-container">
-            <video 
-              className="car-video"
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-              onError={handleVideoError}
-              onLoadedData={handleVideoLoad}
-            >
-              <source src="/carv.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div className="visual-caption">
-            <span className="pulse-dot"></span>
-            Premium Showcase
-          </div>
+          <PixelTransition
+            firstContent={
+              <div className="car-image-container">
+                <img 
+                  src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=1200&q=80"
+                  alt="Luxury Car Showcase"
+                  className="car-image"
+                />
+              </div>
+            }
+            secondContent={
+              <div className="car-image-container">
+                <img 
+                  src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1200&q=80"
+                  alt="Luxury Car Detail"
+                  className="car-image"
+                />
+              </div>
+            }
+            gridSize={10}
+            pixelColor="#ff4500"
+            animationStepDuration={0.4}
+            once={false}
+            aspectRatio="0"
+            className="hero-pixel-transition"
+          />
         </div>
       </div>
     </section>

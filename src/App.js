@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useMemo } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import WelcomeSection from './components/WelcomeSection';
+import SamuraiSection from './components/SamuraiSection';
+import StatsSection from './components/StatsSection';
 import ExteriorSection from './components/ExteriorSection';
 import InteriorSection from './components/InteriorSection';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import ClickSpark from './components/ClickSpark';
 import './App.css';
 
 function App() {
@@ -82,25 +84,38 @@ function App() {
   ], []);
 
   return (
-    <div className="App">
-      <Header />
-      <div className="section-animate visible">
-        <Hero />
+    <ClickSpark
+      sparkColor="#ff4500"
+      sparkSize={12}
+      sparkRadius={20}
+      sparkCount={8}
+      duration={500}
+      easing="ease-out"
+      extraScale={1.2}
+    >
+      <div className="App">
+        <Header />
+        <div className="section-animate visible">
+          <Hero />
+        </div>
+        <div className="section-animate">
+          <SamuraiSection />
+        </div>
+        <div className="section-animate">
+          <StatsSection />
+        </div>
+        <div className="section-animate">
+          <ExteriorSection products={exteriorProducts} />
+        </div>
+        <div className="section-animate">
+          <InteriorSection products={interiorProducts} />
+        </div>
+        <div className="section-animate">
+          <ContactForm />
+        </div>
+        <Footer />
       </div>
-      <div className="section-animate">
-        <WelcomeSection />
-      </div>
-      <div className="section-animate">
-        <ExteriorSection products={exteriorProducts} />
-      </div>
-      <div className="section-animate">
-        <InteriorSection products={interiorProducts} />
-      </div>
-      <div className="section-animate">
-        <ContactForm />
-      </div>
-      <Footer />
-    </div>
+    </ClickSpark>
   );
 }
 
