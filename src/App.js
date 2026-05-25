@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import WelcomeSection from './components/WelcomeSection';
+import ExteriorSection from './components/ExteriorSection';
 import ProductSection from './components/ProductSection';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
@@ -90,12 +91,7 @@ function App() {
         <WelcomeSection />
       </div>
       <div className="section-animate">
-        <ProductSection 
-          subtitle="PREMIUM UPGRADES" 
-          title="EXTERIOR ESSENTIALS" 
-          products={exteriorProducts} 
-          bgColor="var(--bg-deep)"
-        />
+        <ExteriorSection products={exteriorProducts} />
       </div>
       <div className="section-animate">
         <ProductSection 

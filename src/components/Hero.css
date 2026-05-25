@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   min-height: 100vh;
-  padding: 150px 0 100px;
+  padding: 180px 0 100px; /* Increased top padding for fixed navbar */
   overflow: hidden;
   background-color: var(--bg-deep);
 }

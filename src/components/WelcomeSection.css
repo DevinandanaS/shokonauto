@@ -98,6 +98,20 @@
   line-height: 1.2;
 }
 
+.welcome-content .welcome-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.welcome-content .welcome-title .char {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .welcome-content p {
   color: var(--text-secondary);
   margin-bottom: 1.5rem;

@@ -1,0 +1,7 @@
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="8" width="24" height="24" rx="4" fill="#ff4500"/>
+  <circle cx="14" cy="20" r="6" fill="#fff" opacity="0.3"/>
+  <text x="32" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fff">
+    SHOKON<tspan fill="#ff4500">AUTO</tspan>
+  </text>
+</svg>

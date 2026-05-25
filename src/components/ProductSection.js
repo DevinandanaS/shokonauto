@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import ProductCard from './ProductCard';
 import './ProductSection.css';
 import { LayoutGrid } from 'lucide-react';
+import ScrollFloat from './ScrollFloat';
 
 const ProductSection = memo(({ subtitle, title, products, bgColor }) => {
   return (
@@ -10,7 +11,13 @@ const ProductSection = memo(({ subtitle, title, products, bgColor }) => {
         <div className="section-head">
           <div className="head-left">
             <span className="section-subtitle">{subtitle}</span>
-            <h2 className="section-title">{title}</h2>
+            <ScrollFloat 
+              containerClassName="product-section-title"
+              scrollStart="top bottom-=10%"
+              scrollEnd="center center"
+            >
+              {title}
+            </ScrollFloat>
           </div>
           <button className="btn btn-outline hide-mobile">
             <LayoutGrid size={18} /> View Catalog

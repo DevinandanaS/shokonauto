@@ -1,0 +1,39 @@
+.scroll-float {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 2rem 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-family: var(--font-main);
+}
+
+.scroll-float-text {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.scroll-float .char {
+  display: inline-block;
+  will-change: transform, opacity;
+  transform-origin: 50% 0%;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .scroll-float {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-float {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-float {
+    font-size: 1.5rem;
+  }
+}
