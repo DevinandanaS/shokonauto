@@ -58,9 +58,29 @@
 }
 
 .hero-content .text-pressure-wrapper {
-  display: block;
-  height: 120px;
-  margin: 1rem 0;
+  display: inline-block;
+  height: auto;
+  margin: 0;
+  vertical-align: baseline;
+  line-height: 1;
+  cursor: pointer;
+  width: auto;
+  max-width: 100%;
+}
+
+.hero-content .text-pressure-wrapper > div {
+  height: auto !important;
+  width: auto !important;
+}
+
+.hero-content .text-pressure-wrapper .text-pressure-title {
+  font-size: 4.5rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+  transform: none !important;
 }
 
 .hero-content p {
@@ -213,8 +233,8 @@
   .hero-content .hero-title { 
     font-size: 3.5rem; 
   }
-  .hero-content .text-pressure-wrapper {
-    height: 100px;
+  .hero-content .text-pressure-wrapper .text-pressure-title {
+    font-size: 3.5rem !important;
   }
   .car-video-container,
   .car-image-container {
@@ -237,8 +257,8 @@
   .hero-content .hero-title { 
     font-size: 3rem; 
   }
-  .hero-content .text-pressure-wrapper {
-    height: 80px;
+  .hero-content .text-pressure-wrapper .text-pressure-title {
+    font-size: 3rem !important;
   }
   .car-video-container,
   .car-image-container {
@@ -250,8 +270,8 @@
   .hero-content .hero-title {
     font-size: 2.5rem;
   }
-  .hero-content .text-pressure-wrapper {
-    height: 60px;
+  .hero-content .text-pressure-wrapper .text-pressure-title {
+    font-size: 2.5rem !important;
   }
   .car-video-container,
   .car-image-container {
@@ -263,8 +283,8 @@
   .hero-content .hero-title {
     font-size: 2rem;
   }
-  .hero-content .text-pressure-wrapper {
-    height: 50px;
+  .hero-content .text-pressure-wrapper .text-pressure-title {
+    font-size: 2rem !important;
   }
   .car-video-container,
   .car-image-container {
