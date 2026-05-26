@@ -4,50 +4,29 @@ import ScrollFloat from './ScrollFloat';
 import './ExteriorSection.css';
 
 const ExteriorSection = memo(({ products }) => {
-  const [currentCard, setCurrentCard] = React.useState(0);
-  const [manualControl, setManualControl] = React.useState(false);
-  const timeoutRef = React.useRef(null);
+  const [forceUpdate, setForceUpdate] = React.useState(0);
 
-  const handleCardClick = (index) => {
-    setCurrentCard(index);
-    setManualControl(true);
-    
-    // Resume auto-play after 5 seconds
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => setManualControl(false), 5000);
-  };
+  // Reorder products array based on which card should be in front
+  const reorderedProducts = React.useMemo(() => {
+    const order = [...products];
+    // Move clicked card to front by rotating array
+    for (let i = 0; i < forceUpdate % products.length; i++) {
+      order.push(order.shift());
+    }
+    return order;
+  }, [products, forceUpdate]);
 
   const handlePrevCard = () => {
-    const newIndex = currentCard === 0 ? products.length - 1 : currentCard - 1;
-    setCurrentCard(newIndex);
-    setManualControl(true);
-    
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => setManualControl(false), 5000);
+    setForceUpdate(prev => prev - 1);
   };
 
   const handleNextCard = () => {
-    const newIndex = currentCard === products.length - 1 ? 0 : currentCard + 1;
-    setCurrentCard(newIndex);
-    setManualControl(true);
-    
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => setManualControl(false), 5000);
+    setForceUpdate(prev => prev + 1);
   };
 
   const handleIndicatorClick = (index) => {
-    setCurrentCard(index);
-    setManualControl(true);
-    
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => setManualControl(false), 5000);
+    setForceUpdate(index);
   };
-
-  React.useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
 
   return (
     <section className="exterior-section">
@@ -71,15 +50,13 @@ const ExteriorSection = memo(({ products }) => {
             height={500}
             cardDistance={40}
             verticalDistance={50}
-            delay={manualControl ? 999999 : 2500}
+            delay={2500}
             pauseOnHover={true}
             skewAmount={4}
             easing="elastic"
-            onCardClick={handleCardClick}
-            key={currentCard}
           >
-            {products.map((product, index) => (
-              <Card key={index} customClass="exterior-card">
+            {reorderedProducts.map((product, index) => (
+              <Card key={product.title} customClass="exterior-card">
                 <div className="card-image-wrapper">
                   <img src={product.image} alt={product.title} />
                 </div>
@@ -100,10 +77,10 @@ const ExteriorSection = memo(({ products }) => {
               ‹
             </button>
             <div className="card-indicators">
-              {products.map((_, index) => (
+              {products.map((product, index) => (
                 <button
                   key={index}
-                  className={`indicator ${index === currentCard ? 'active' : ''}`}
+                  className={`indicator ${index === (forceUpdate % products.length) ? 'active' : ''}`}
                   onClick={() => handleIndicatorClick(index)}
                   aria-label={`Go to card ${index + 1}`}
                 />
