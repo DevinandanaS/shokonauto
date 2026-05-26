@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import SamuraiSection from './components/SamuraiSection';
@@ -11,8 +11,6 @@ import ClickSpark from './components/ClickSpark';
 import './App.css';
 
 function App() {
-  const sectionsRef = useRef([]);
-
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,

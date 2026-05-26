@@ -16,10 +16,10 @@ const Footer = () => {
               Shokon Auto is a team of inquisitive minds. We are a committed dynamic, diversified firm offering innovative solutions with a drive to excel in the interest of its customers.
             </p>
             <div className="social-links">
-              <a href="#"><Heart size={20} /></a>
-              <a href="#"><Share2 size={20} /></a>
-              <a href="#"><Mail size={20} /></a>
-              <a href="#"><MessageCircle size={20} /></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Heart size={20} /></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Share2 size={20} /></a>
+              <a href="mailto:info@shokonauto.com" aria-label="Email"><Mail size={20} /></a>
+              <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><MessageCircle size={20} /></a>
             </div>
           </div>
           
@@ -37,10 +37,10 @@ const Footer = () => {
           <div className="footer-col services-col">
              <h3>Services</h3>
             <ul>
-              <li><a href="#">Exterior Tuning</a></li>
-              <li><a href="#">Interior Customization</a></li>
-              <li><a href="#">Smart Electronics</a></li>
-              <li><a href="#">Performance Kits</a></li>
+              <li><a href="#services">Exterior Tuning</a></li>
+              <li><a href="#services">Interior Customization</a></li>
+              <li><a href="#services">Smart Electronics</a></li>
+              <li><a href="#services">Performance Kits</a></li>
             </ul>
           </div>
 
